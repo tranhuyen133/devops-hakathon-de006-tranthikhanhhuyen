@@ -1,0 +1,18 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor & IDE directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+
+# Temporary and build files
+tmp/
+temp/
