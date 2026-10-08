@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Hackathon - Đề 06 | Trần Thị Khánh Huyền</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --accent: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.25);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .badge-status {
+            display: inline-block;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        /* Grid Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.75rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            color: var(--text-heading);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        .card h2 .icon {
+            font-size: 1.4rem;
+        }
+
+        /* Info List */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.65rem 0;
+            border-bottom: 1px dashed var(--border);
+            font-size: 0.95rem;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list .label {
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .info-list .value {
+            font-weight: 600;
+            color: var(--text-heading);
+            text-align: right;
+            word-break: break-all;
+        }
+
+        .code-tag {
+            background-color: #f1f5f9;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.85rem;
+            color: #0f172a;
+        }
+
+        /* Intro & Summary Section */
+        .intro-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.75rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-card h2 {
+            font-size: 1.3rem;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        .intro-card p {
+            margin-bottom: 1rem;
+            color: #475569;
+            text-align: justify;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #eff6ff;
+            color: var(--primary);
+            border: 1px solid #bfdbfe;
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.875rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer strong {
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Tiêu đề chính -->
+        <header>
+            <h1>BÀI THI DEVOPS HACKATHON</h1>
+            <div class="subtitle">Triển khai Web Server Nginx & Bảo mật Tường lửa Linux</div>
+            <div class="badge-status">🚀 Nginx Server Active • Status: 200 OK</div>
+        </header>
+
+        <div class="grid">
+            <!-- Khối thông tin sinh viên -->
+            <section class="card">
+                <h2><span class="icon">👤</span> Thông Tin Sinh Viên</h2>
+                <ul class="info-list">
+                    <li>
+                        <span class="label">Họ và tên:</span>
+                        <span class="value">Trần Thị Khánh Huyền</span>
+                    </li>
+                    <li>
+                        <span class="label">Tài khoản Linux:</span>
+                        <span class="value"><span class="code-tag">tranthikhanhuyen</span></span>
+                    </li>
+                    <li>
+                        <span class="label">Nhóm người dùng:</span>
+                        <span class="value"><span class="code-tag">tranthikhanhuyen (sudo)</span></span>
+                    </li>
+                    <li>
+                        <span class="label">Email:</span>
+                        <span class="value">tkhuyen1303@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="label">GitHub:</span>
+                        <span class="value"><span class="code-tag">tranhuyen133</span></span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Khối thông tin bài thi -->
+            <section class="card">
+                <h2><span class="icon">📝</span> Thông Tin Bài Thi</h2>
+                <ul class="info-list">
+                    <li>
+                        <span class="label">Kỳ thi / Môn học:</span>
+                        <span class="value">DevOps Hackathon</span>
+                    </li>
+                    <li>
+                        <span class="label">Mã đề thi:</span>
+                        <span class="value"><span class="code-tag">Đề số 06 (DE06)</span></span>
+                    </li>
+                    <li>
+                        <span class="label">Môi trường:</span>
+                        <span class="value">Linux (Ubuntu) / Nginx / UFW</span>
+                    </li>
+                    <li>
+                        <span class="label">Thư mục mã nguồn:</span>
+                        <span class="value"><span class="code-tag">/var/www/devops-hakthon-de006-tranthikhanhuyen</span></span>
+                    </li>
+                    <li>
+                        <span class="label">Cổng dịch vụ:</span>
+                        <span class="value">Port 80 (HTTP)</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Đoạn giới thiệu ngắn -->
+        <section class="intro-card">
+            <h2><span class="icon">📖</span> Giới Thiệu Dự Án</h2>
+            <p>
+                Dự án này là bài thực hành tổng hợp thuộc khuôn khổ <strong>DevOps Hackathon - Đề số 06</strong>. 
+                Mục tiêu của bài thi là xây dựng và vận hành một hạ tầng máy chủ Linux chuẩn hóa: từ khâu phân quyền tài khoản 
+                quản trị viên bảo mật, cài đặt các gói phần mềm cốt lõi (Nginx, Git, UFW, Curl), quản lý mã nguồn phiên bản với Git/GitHub, 
+                đến triển khai Nginx Server Block phục vụ website tĩnh và thiết lập chính sách tường lửa UFW ngăn chặn truy cập trái phép.
+            </p>
+            <p>
+                Mọi tệp cấu hình và mã nguồn được thiết lập theo đúng quy chuẩn phân quyền hệ thống (<span class="code-tag">Directory 755</span>, <span class="code-tag">File 644</span>), 
+                không sử dụng quyền nguy hiểm <span class="code-tag">777</span> và đảm bảo quy trình CI/CD git pull không đòi hỏi quyền sudo dư thừa.
+            </p>
+            <div class="tech-tags">
+                <span class="tag">#Linux_Admin</span>
+                <span class="tag">#Nginx_ServerBlock</span>
+                <span class="tag">#UFW_Firewall</span>
+                <span class="tag">#Git_Workflow</span>
+                <span class="tag">#DevOps_Hackathon_De06</span>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 <strong>Trần Thị Khánh Huyền</strong> - DevOps Hackathon Đề 06. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
